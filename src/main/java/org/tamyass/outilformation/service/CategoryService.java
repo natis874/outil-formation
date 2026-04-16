@@ -1,6 +1,7 @@
 package org.tamyass.outilformation.service;
 
 import org.tamyass.outilformation.dto.CategoryDTO;
+import org.tamyass.outilformation.dto.SkillDTO;
 
 import java.util.List;
 
@@ -10,8 +11,9 @@ public interface CategoryService {
 
     CategoryDTO getCategoryById(Long id);
 
-    CategoryDTO updateCategory(Long id,CategoryDTO categoryDTO);
-
     CategoryDTO createCategory(CategoryDTO categoryDTO);
+    CategoryDTO updateCategory(Long id,CategoryDTO categoryDTO);
     void deleteCategory(Long id);
+    // GET /api/categories/{id}/skills récupérer toutes les skills d’une catégorie.
+    //SkillDTO getSkillByCategory(String nameCategory);
 }
