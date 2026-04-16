@@ -18,11 +18,17 @@ public class UserRestController {
         this.userService = userService;
     }
     // GET /api/users
-    @GetMapping("/{id}")
+    @GetMapping
     public ResponseEntity<List<UserDTO>> getAllUsers(){
         List<UserDTO> users = userService.getAllUser();
         return ResponseEntity.ok(users);
     }
+    // GET /api/users/{id}
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
+        return ResponseEntity.ok(userService.getUserById(id));
+    }
+
     @PostMapping
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO){
         UserDTO userCreated = userService.createUser(userDTO);
