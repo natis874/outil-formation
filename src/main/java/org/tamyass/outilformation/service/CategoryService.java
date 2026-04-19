@@ -1,7 +1,6 @@
 package org.tamyass.outilformation.service;
 
 import org.tamyass.outilformation.dto.CategoryDTO;
-import org.tamyass.outilformation.dto.SkillDTO;
 
 import java.util.List;
 
