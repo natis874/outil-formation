@@ -14,6 +14,5 @@ public interface CategoryService {
     CategoryDTO createCategory(CategoryDTO categoryDTO);
     CategoryDTO updateCategory(Long id,CategoryDTO categoryDTO);
     void deleteCategory(Long id);
-    // GET /api/categories/{id}/skills récupérer toutes les skills d’une catégorie.
-    //SkillDTO getSkillByCategory(String nameCategory);
+
 }
