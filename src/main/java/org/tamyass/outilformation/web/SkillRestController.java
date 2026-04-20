@@ -1,10 +1,7 @@
 package org.tamyass.outilformation.web;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.tamyass.outilformation.dto.SkillDTO;
 import org.tamyass.outilformation.entities.Skill;
 import org.tamyass.outilformation.service.SkillService;
@@ -12,7 +9,7 @@ import org.tamyass.outilformation.service.SkillService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/skill")
+@RequestMapping("/api")
 public class SkillRestController {
 
     private final SkillService skillService;
@@ -20,14 +17,18 @@ public class SkillRestController {
     public SkillRestController(SkillService skillService) {
         this.skillService = skillService;
     }
-    public ResponseEntity<List<Skill>> getSkillsByUser(@PathVariable Long userId) {
-        return null;
+
+    @GetMapping("/user/{userId}/skills)")
+    public ResponseEntity<List<SkillDTO>> getSkillsByUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(skillService.getSkillsbyUserId(userId));
     }
+    @PatchMapping("/skills/{skillId}/estimation")
     public ResponseEntity<SkillDTO> updqteEstimation(@PathVariable Long skillId, @RequestBody Integer level) {
-        return null;
+        return ResponseEntity.ok(skillService.UpdateEstimation(skillId,level));
     }
-    public ResponseEntity<List<Skill>> getSkillByCategoryId(@PathVariable Long categoryId) {
-        return null;
+    @GetMapping("/categories/{categoryId}/skills")
+    public ResponseEntity<List<SkillDTO>> getSkillByCategoryId(@PathVariable Long categoryId) {
+        return ResponseEntity.ok(skillService.getSkillByCategoryId(categoryId));
     }
 
 }
