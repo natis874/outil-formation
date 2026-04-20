@@ -5,8 +5,7 @@ import lombok.*;
 import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Builder
 public class SkillDTO {
     private Long id;
@@ -14,6 +13,7 @@ public class SkillDTO {
     private Long categoryId;
     private String categoryName;
     private Integer aiLevel;
+    private Integer selfLevel;
     private Long userId;
     private List<AssessmentQuestionDTO> questions;
 
