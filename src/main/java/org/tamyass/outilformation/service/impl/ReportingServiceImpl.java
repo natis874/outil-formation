@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.tamyass.outilformation.dto.report.MindMapDTO;
 
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor // pour injecter proprement des repositories et mappers
 public class ReportingServiceImpl implements ReportingService {
 
 
@@ -25,16 +27,6 @@ public class ReportingServiceImpl implements ReportingService {
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
     private final SkillMapper skillMapper;
-
-    public ReportingServiceImpl(SkillRepository skillRepository,
-                                UserRepository userRepository,
-                                CategoryRepository categoryRepository,
-                                SkillMapper skillMapper) {
-        this.skillRepository = skillRepository;
-        this.userRepository = userRepository;
-        this.categoryRepository = categoryRepository;
-        this.skillMapper = skillMapper;
-    }
 
     @Override
     public List<MindMapDTO> getMindMap(Long userId) {
