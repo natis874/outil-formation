@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.tamyass.outilformation.dto.UserDTO;
 import org.tamyass.outilformation.entities.User;
@@ -10,15 +11,11 @@ import org.tamyass.outilformation.service.UserService;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor // pour injecter proprement  des repositories et mappers
 public class UserServiceImpl implements UserService {
 
     private  final UserRepository userRepository;
     private final UserMapper userMapper;
-
-    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
-        this.userRepository = userRepository;
-        this.userMapper = userMapper;
-    }
 
     @Override
     public List<UserDTO> getAllUser() {
