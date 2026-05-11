@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.web;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,11 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/reports")
+@RequiredArgsConstructor // pour faire les contructeurs des services
 public class ReportingRestController {
     private final ReportingService reportingService;
-    public ReportingRestController(ReportingService reportingService) {
-        this.reportingService = reportingService;
-    }
+
     @GetMapping("/text/user/{userId}")
     public ResponseEntity<TextReportDTO> getTextReport(@PathVariable  Long userId) {
         return ResponseEntity.ok(reportingService.getTextReport(userId));
