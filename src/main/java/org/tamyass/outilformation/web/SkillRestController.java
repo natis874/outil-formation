@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.web;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.tamyass.outilformation.dto.SkillDTO;
@@ -10,13 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor // pour faire les contructeurs des services
 public class SkillRestController {
 
     private final SkillService skillService;
-
-    public SkillRestController(SkillService skillService) {
-        this.skillService = skillService;
-    }
 
     @GetMapping("/user/{userId}/skills)")
     public ResponseEntity<List<SkillDTO>> getSkillsByUser(@PathVariable Long userId) {
