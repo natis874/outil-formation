@@ -1,6 +1,7 @@
 package org.tamyass.outilformation.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.tamyass.outilformation.dto.AssessmentQuestionDTO;
 import org.tamyass.outilformation.dto.SkillDTO;
@@ -16,19 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor // pour injecter proprement  des repositories et mappers
 public class AssessmentQuestionServiceImpl implements AssessmentQuestionService {
 
     private final AssessmentQuestionRepository assessmentQuestionRepository;
     private final SkillRepository skillRepository;
     private final AssessmentQuestionMapper assessmentQuestionMapper;
     private final SkillMapper skillMapper;
-
-    public AssessmentQuestionServiceImpl(AssessmentQuestionRepository assessmentQuestionRepository, SkillRepository skillRepository, AssessmentQuestionMapper assessmentQuestionMapper, SkillMapper skillMapper) {
-        this.assessmentQuestionRepository = assessmentQuestionRepository;
-        this.skillRepository = skillRepository;
-        this.assessmentQuestionMapper = assessmentQuestionMapper;
-        this.skillMapper = skillMapper;
-    }
 
     @Override
     public List<AssessmentQuestionDTO> generateQuestionBySkillId(Long skillId) {
