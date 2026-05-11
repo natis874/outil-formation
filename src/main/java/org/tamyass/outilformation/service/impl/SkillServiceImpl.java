@@ -1,6 +1,7 @@
 package org.tamyass.outilformation.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.tamyass.outilformation.dto.SkillDTO;
 import org.tamyass.outilformation.entities.Skill;
@@ -10,16 +11,12 @@ import org.tamyass.outilformation.service.SkillService;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor // pour injecter proprement  des repositories et mappers
 public class SkillServiceImpl implements SkillService {
 
     private final SkillRepository skillRepository;
 
     private final SkillMapper skillMapper;
-
-    public SkillServiceImpl(SkillRepository skillRepository, SkillMapper skillMapper) {
-        this.skillRepository = skillRepository;
-        this.skillMapper = skillMapper;
-    }
 
 
     @Override
