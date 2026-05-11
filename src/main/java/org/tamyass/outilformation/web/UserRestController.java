@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.web;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@RequiredArgsConstructor // pour faire les contructeurs des services
 public class UserRestController {
 
-    private UserService userService;
-    public UserRestController(UserService userService) {
-        this.userService = userService;
-    }
+    private final UserService userService;
+
     // GET /api/users
     @GetMapping
     public ResponseEntity<List<UserDTO>> getAllUsers(){
