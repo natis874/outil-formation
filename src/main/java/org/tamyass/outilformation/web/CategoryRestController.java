@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.web;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.tamyass.outilformation.dto.CategoryDTO;
@@ -10,13 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
+@RequiredArgsConstructor // pour faire les contructeurs des services
 public class CategoryRestController {
 
     private final CategoryService categoryService;
 
-    public CategoryRestController(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
     // GET /api/categories
     @GetMapping
     public ResponseEntity<List<CategoryDTO>> getAllCategories(){
