@@ -1,5 +1,6 @@
 package org.tamyass.outilformation.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.tamyass.outilformation.dto.CategoryDTO;
 import org.tamyass.outilformation.entities.Category;
@@ -10,16 +11,12 @@ import org.tamyass.outilformation.service.CategoryService;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor // pour injecter proprement  des repositories et mappers
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
 
     private final CategoryMapper categoryMapper;
-
-    public CategoryServiceImpl(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
-        this.categoryRepository = categoryRepository;
-        this.categoryMapper = categoryMapper;
-    }
 
 
     @Override
