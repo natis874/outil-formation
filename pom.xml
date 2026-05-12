@@ -30,12 +30,7 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
-		<!-- Dépendence pour le langchain4j  -->
-		<dependency>
-			<groupId>dev.langchain4j</groupId>
-			<artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
-			<version>0.31.0</version>
-		</dependency>
+
 		<!-- Dépendence pour le swagger  -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -89,6 +84,46 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
 		</dependency>
+
+		<!-- Dépendence pour le langchain4j  -->
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-reactor</artifactId>
+			<version>1.0.0-alpha1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
+			<version>1.0.0-alpha1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-document-parser-apache-pdfbox</artifactId>
+			<version>1.0.0-alpha1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-spring-boot-starter</artifactId>
+			<version>1.0.0-alpha1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
+			<version>1.0.0-alpha1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-pgvector</artifactId>
+			<version>1.0.0-alpha1</version>
+		</dependency>
+
+		<!-- Dépendence pour le convert pdf text   -->
+
 	</dependencies>
 
 	<build>
