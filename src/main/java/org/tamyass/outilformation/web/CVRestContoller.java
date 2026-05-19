@@ -17,9 +17,11 @@ import java.util.List;
 public class CVRestContoller {
     private final CVService cvService;
 
+    @PostMapping("/extract")
     public ResponseEntity<CVResponseDTO> extractSkills(@RequestParam("file") MultipartFile file){
         return ResponseEntity.ok(cvService.extractSkillFromCV(file));
     }
+    @PostMapping("/user/{userId}/save")
     public ResponseEntity<List<SkillDTO>> saveSkills(
             @PathVariable Long userId,
             @RequestBody List<CVSkillDTO> skills
