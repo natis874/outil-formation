@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cv")
 @RequiredArgsConstructor // pour faire les contructeurs des services
+@CrossOrigin("*") // Donner l'accès à spring boot
 public class CVRestContoller {
     private final CVService cvService;
 
